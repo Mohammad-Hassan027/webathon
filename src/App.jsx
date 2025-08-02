@@ -18,13 +18,13 @@ function App() {
   if (isLoading && location.pathname === "/") return <InitialLoader />;
 
   return (
-    <div className="overflow-x-hidden bg-accent min-h-screen w-screen flex flex-col">
+    <div className="overflow-x-hidden bg-accent min-h-screen min-w-screen flex flex-col">
       <Navbar />
       <div className="pb-24">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={location.pathname}
-            className="min-h-[calc(100vh-0px)] flex-grow" // adjust if Navbar/footer affect height
+            className="min-h-[calc(100vh-0px)] flex-grow"
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}

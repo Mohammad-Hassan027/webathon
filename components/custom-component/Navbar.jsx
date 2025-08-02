@@ -3,6 +3,9 @@ import { DropdownMenuDemo } from "../custom-component/dropmenu";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faCanadianMapleLeaf } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +30,13 @@ const Navbar = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       className="h-[113px] max-w-full px-10 rounded-b-4xl bg-white shadow-2xl flex items-center justify-between"
     >
-      <div className="bg-white p-1 rounded-4xl">
-        <div className="bg-primary rounded-[50%] py-2 px-3 shadow-2xl">
-          <p className="text-primary font-black text-4xl">H</p>
+      <div className="bg-white p-2">
+        <div className="rounded-[50%] shadow-3xl">
+          <FontAwesomeIcon
+            icon={faCanadianMapleLeaf}
+            bounce
+            style={{ color: "#ff5d52", fontSize: "50px" }}
+          />
         </div>
       </div>
       <div className="hidden w-[600px] md:flex items-center justify-between text-2xl">

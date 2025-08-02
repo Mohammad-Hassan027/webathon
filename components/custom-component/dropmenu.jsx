@@ -12,14 +12,35 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faCircleQuestion,
+  faInfoCircle,
+  faUserGroup,
+  faHeadset,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export function DropdownMenuDemo({ setIsOpen, isOpen }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
   return (
-    <div className="relative">
-      <DropdownMenu>
+    <div className="relative sm:p-1 md:p-2">
+      <DropdownMenu
+        onOpenChange={(open) => setIsOpen(open)}
+        className="transition duration-300 ease-in opacity-100 scale-100"
+      >
         <DropdownMenuTrigger asChild>
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            type="button"
             className="p-2 relative w-10 h-10 flex flex-col justify-center items-center group border-none bg-transparent cursor-pointer"
           >
             <span
@@ -39,21 +60,47 @@ export function DropdownMenuDemo({ setIsOpen, isOpen }) {
         <DropdownMenuContent className="w-56" align="start">
           <DropdownMenuLabel>My Services</DropdownMenuLabel>
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <a href="/">Home</a>
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            <DropdownMenuItem asChild>
+              <a href="/" className="flex items-center justify-between w-full">
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faHome}
+                    style={{ color: "#ff5d52", fontSize: "20px" }}
+                  />
+                  Home
+                </span>
+                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+              </a>
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <a href="/about">About</a>
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+            <DropdownMenuItem asChild>
+              <a href="/about">
+                <FontAwesomeIcon
+                  icon={faInfoCircle}
+                  style={{ color: "#ff5d52", fontSize: "20px" }}
+                />
+                About
+                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+              </a>
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <a href="/faq">Faq</a>
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+            <DropdownMenuItem asChild>
+              <a href="/faq">
+                <FontAwesomeIcon
+                  icon={faCircleQuestion}
+                  style={{ color: "#ff5d52", fontSize: "20px" }}
+                />
+                Faq
+                <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+              </a>
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <a href="#team">Our Team</a>
-              <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+            <DropdownMenuItem asChild>
+              <a href="#team">
+                <FontAwesomeIcon
+                  icon={faUserGroup}
+                  style={{ fontSize: "20px", color: "#ff5d52" }}
+                />
+                Our Team
+                <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+              </a>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
@@ -76,11 +123,25 @@ export function DropdownMenuDemo({ setIsOpen, isOpen }) {
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>GitHub</DropdownMenuItem>
-          <DropdownMenuItem>Support</DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <a href="#">
+              <FontAwesomeIcon icon={faGithub} style={{ fontSize: "18px" }} />
+              GitHub
+            </a>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <a href="#">
+              <FontAwesomeIcon icon={faHeadset} style={{ fontSize: "18px" }} />
+              Support
+            </a>
+          </DropdownMenuItem>
           <DropdownMenuItem disabled>API</DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
+            <FontAwesomeIcon
+              icon={faRightFromBracket}
+              style={{ fontSize: "18px" }}
+            />
             Log out
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
