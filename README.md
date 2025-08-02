@@ -11,7 +11,8 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-### Deployed on render.com as static website
+# Deployed on render.com as static website
+
 ## Web site is live Here :
 Click Here : https://webathon-app.onrender.com
 
@@ -25,3 +26,10 @@ Click Here : https://webathon-app.onrender.com
 6. embla-carousel-autoplay
 7. etc
 
+## Elements
+1. Navebar
+2. Loader
+3. Loop Marquee (Pause on hover)
+4. Our Team
+5. text animation
+6. Carosel
