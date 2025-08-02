@@ -13,3 +13,14 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Web site is live Here :
 #Click Here : https://webathon-app.onrender.com
+
+## Deployed on render.com as static website
+
+
+## Framework and Libarey used :
+1. React Js
+2. Farmer Motion
+3. Shadcn UI
+4. Fount Awesome (for founts and logo )
+5. etc
+
