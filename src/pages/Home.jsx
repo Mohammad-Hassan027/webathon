@@ -35,7 +35,7 @@ const Home = () => {
           className="flex items-center justify-center min-h-[60vh] pb-5"
         >
           <div className="flex flex-col items-center justify-center">
-            <h1 className="scroll-m-20 text-center text-2xl sm:text-4xl font-bold sm:font-extrabold tracking-tight text-balance">
+            <h1 className="scroll-m-20 text-center text-xl sm:text-3xl md:text-4xl font-semi-bold sm:font-bold md:font-extrabold tracking-tight text-balance">
               Welcome to
               <Typewriter
                 options={{
@@ -51,6 +51,13 @@ const Home = () => {
               This is the home page of our application. Here you can find
               various services and information about us.
             </p>
+          </div>
+          <div>
+            <DotLottieReact
+              src="https://lottie.host/87a3f040-455d-4400-b71b-67eee6b15d64/MwneqcEemg.lottie"
+              loop
+              autoplay
+            />
           </div>
         </section>
 
