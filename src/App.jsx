@@ -34,7 +34,7 @@ function App() {
               <Route
                 path="/"
                 element={
-                  <PageWrapper>
+                  <PageWrapper key={location.pathname}>
                     <Home />
                   </PageWrapper>
                 }
@@ -42,12 +42,19 @@ function App() {
               <Route
                 path="/about"
                 element={
-                  <PageWrapper>
+                  <PageWrapper key={location.pathname}>
                     <About />
                   </PageWrapper>
                 }
               />
-              <Route path="/faq" element={<FAQ />} />
+              <Route
+                path="/faq"
+                element={
+                  <PageWrapper key={location.pathname}>
+                    <FAQ />
+                  </PageWrapper>
+                }
+              />
             </Routes>
           </motion.div>
         </AnimatePresence>

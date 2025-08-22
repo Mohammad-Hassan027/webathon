@@ -32,10 +32,10 @@ const Home = () => {
       >
         <section
           aria-label="Hero"
-          className="flex items-center justify-center min-h-[60vh] pb-5"
+          className="flex items-center justify-center min-h-[40vh] sm:min-h-[60vh] pb-5"
         >
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="scroll-m-20 text-center text-xl sm:text-3xl md:text-4xl font-semi-bold sm:font-bold md:font-extrabold tracking-tight text-balance">
+          <div className="flex flex-col items-center justify-center max-w-[60vw]">
+            <h1 className="scroll-m-10 text-center text-sm text-amber-600 sm:text-3xl md:text-4xl font-normal sm:font-bold md:font-extrabold tracking-tight text-balance">
               Welcome to
               <Typewriter
                 options={{
@@ -47,16 +47,17 @@ const Home = () => {
                 }}
               />
             </h1>
-            <p className="text-sm sm:text-xl text-center mt-4">
+            <p className="text-xs font- font-extralight sm:text-xl text-center mt-4">
               This is the home page of our application. Here you can find
               various services and information about us.
             </p>
           </div>
-          <div>
+          <div className="w-[140px] h-[140px] sm:w-[250px] sm:h-[250px] cursor-pointer">
             <DotLottieReact
               src="https://lottie.host/87a3f040-455d-4400-b71b-67eee6b15d64/MwneqcEemg.lottie"
               loop
               autoplay
+              style={{ width: "100%", height: "100%" }}
             />
           </div>
         </section>

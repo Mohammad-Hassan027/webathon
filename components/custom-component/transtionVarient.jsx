@@ -1,11 +1,17 @@
 export const pageVariants = {
-  initial: { x: "100%", opacity: 0 },
-  in: { x: "0%", opacity: 1 },
-  out: { x: "-100%", opacity: 0 },
+  initial: {
+    opacity: 0,
+    scale: 0.8,
+    x: -100,
+    y: 0,
+
+  },
+  in: { opacity: 1, scale: 1, x: 0, y: 0 },
+  out: { opacity: 0, scale: 0.8, x: 100, y: 0 },
 };
 
 export const pageTransition = {
-  type: "tween",
-  ease: "easeOut",
-  duration: 0.45,
+  type: "spring",
+  ease: "cubic-bezier(0.65, 0, 0.35, 1)",
+  duration: 0.8,
 };

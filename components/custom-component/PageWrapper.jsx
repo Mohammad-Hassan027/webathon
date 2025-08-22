@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "./transtionVarient";
 
-function PageWrapper({ children }) {
+function PageWrapper({ children, key }) {
   return (
     <motion.div
-      key={Math.random()} // ensure remount on navigation so AnimatePresence sees change
+      key={key}
       variants={pageVariants}
       initial="initial"
       animate="in"
